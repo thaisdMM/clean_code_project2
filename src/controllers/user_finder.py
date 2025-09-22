@@ -1,7 +1,8 @@
 from src.models.repositories.interfaces.users_respository import UsersRepositoryInteface
+from .interfaces.user_finder import UserFinderInterface
 
 
-class UserFinder:
+class UserFinder(UserFinderInterface):
     # inversão da depedência - D SOLID
     def __init__(self, user_repository: UsersRepositoryInteface):
         self.__users_repo = user_repository

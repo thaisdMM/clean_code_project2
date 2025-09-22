@@ -1,8 +1,9 @@
 from src.models.repositories.interfaces.users_respository import UsersRepositoryInteface
+from .interfaces.user_creator import UserCreatorInterface
 
 
 # logica da regra de negocios para criação de usuários
-class UserCreator:
+class UserCreator(UserCreatorInterface):
     # users_repository recebe a interface -> inversão da dependencia - D SOLID
     # com a tipagem: users_repository: UsersRepositoryInteface  -> consegue acessar os metodos da classe  UsersRepositoryInteface
     def __init__(self, users_repository: UsersRepositoryInteface):
