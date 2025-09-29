@@ -58,7 +58,7 @@ def test_inset_new_user_with_error():
         user_creator.insert_new_user("something", 33, 1.90)
 
     # print(exc_info.value) # output: test_inset_new_user_with_error Usuário já cadastrado.
-    assert str(exc_info.value) == "Usuário já cadastrado."
+    assert str(exc_info.value) == "Usuario ja cadastrado."
 
 
 # # só para conferir se o teste do erro estava mesmos funcionando
