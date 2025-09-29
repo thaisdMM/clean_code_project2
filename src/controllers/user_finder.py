@@ -1,4 +1,5 @@
 from src.models.repositories.interfaces.users_respository import UsersRepositoryInteface
+from src.validators.error_types.http_not_found import HttpNotFoundError
 from .interfaces.user_finder import UserFinderInterface
 
 
@@ -14,7 +15,7 @@ class UserFinder(UserFinderInterface):
     def __select_and_validate_user(self, person_name: str) -> list:
         selected_users = self.__users_repo.select_user(person_name)
         if not selected_users or len(selected_users) == 0:
-            raise Exception("Usuário não encontrado!")
+            raise HttpNotFoundError("Usuário não encontrado!")
 
         return selected_users
 
@@ -26,7 +27,7 @@ class UserFinder(UserFinderInterface):
                 {
                     "id": users.id,
                     "person_name": users.person_name,
-                    "height": users.height,
+                    "age": users.age,
                 }
             )
             return {
