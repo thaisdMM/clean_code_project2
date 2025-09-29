@@ -10,7 +10,7 @@ def user_creator_validator(http_request: any) -> None:
     #  Aumentar a legibilidade: Agrupar a lógica de validação e a definição de dados no mesmo lugar.
     # Limitar a visibilidade: Evitar que a definição de dados "vaze" para outras partes do código.
     class BodyData(BaseModel):
-        person_nam: constr(min_length=1)  # type: ignore
+        person_name: constr(min_length=1)  # type: ignore
         age: int
         height: float
 
